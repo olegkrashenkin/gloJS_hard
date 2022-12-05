@@ -11,16 +11,16 @@ const daysOfWeek = {
 
 // a) через if
 lang === 'ru'
-    ? console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье')
-    : console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday')
+    ? console.log(daysOfWeek.ru)
+    : console.log(daysOfWeek.en)
 
 // b) через switch-case
 switch (lang) {
     case 'ru':
-        console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье')
+        console.log(daysOfWeek.ru)
         break
     case 'en':
-        console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday')
+        console.log(daysOfWeek.en)
 }
 
 // c) через многомерный массив без ифов и switch.
