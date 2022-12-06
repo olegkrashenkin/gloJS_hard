@@ -5,9 +5,8 @@ const foo = function (str) {
         str = str.trim()
         if (str.length > 30) {
             return `${str.substr(0, 30)}...`
-        } else {
-            return str
         }
+        return str
     }
     return `${str} - не строка`
 }
