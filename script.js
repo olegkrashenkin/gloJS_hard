@@ -3,9 +3,7 @@
 const foo = function (str) {
     if (typeof str === 'string') {
         str = str.trim()
-        if (str.length > 30) {
-            return `${str.substr(0, 30)}...`
-        }
+        if (str.length > 30) return `${str.substr(0, 30)}...`
         return str
     }
     return `${str} - не строка`
