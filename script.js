@@ -9,18 +9,18 @@ for (const str of arr1) {
 
 // task 2
 const eratosfen = (limit = 100) => {
-    let arr2 = []
+    let arr = []
     for (let i = 2; i <= limit; i++) {
-        arr2.push(i)
+        arr.push(i)
     }
-    for (let i = 0; i < arr2.length; i++) {
-        if (arr2[i] !== 0) {
-            for (let step = i + arr2[i]; step < arr2.length; step += arr2[i]) {
-                arr2[step] = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 0) {
+            for (let step = i + arr[i]; step < arr.length; step += arr[i]) {
+                arr[step] = 0
             }
         }
     }
-    for (const el of arr2) {
+    for (const el of arr) {
         if (el !== 0) console.log(`${el} - делители этого числа: 1 и ${el}`)
     }
 }
