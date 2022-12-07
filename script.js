@@ -48,29 +48,35 @@ const files = [{
     }]
 }]
 
-const makeHTML = (body) => {
-    const colorJoy = (el) => {
-        switch (true) {
-            case el === 'p' || el === 'div' : return 'second'
-            case el === 'span' : return 'first'
-            case el === 'strong' || el === 'b' : return 'third'
-        }
+
+const colorJoy = (el) => {
+    switch (true) {
+        case el === 'p' || el === 'div' :
+            return 'second'
+        case el === 'span' :
+            return 'first'
+        case el === 'strong' || el === 'b' :
+            return 'third'
     }
-    const makeTag = (item, flag = true) => {
-        let newEl = document.createElement(item.element)
-        newEl.textContent = item.text
-        flag
-            ? newEl.style.color = colorsFirst[colorJoy(item.element)]
-            : newEl.style.color = colorsSecond[colorJoy(item.element)]
-        body.appendChild(newEl)
-    }
-    files.forEach((item, index) => {
-        (index + 2) % 2 === 0
-            ? files[index].items.forEach((item) => makeTag(item))
-            : files[index].items.forEach((item) => makeTag(item, false))
-    })
 }
 
-makeHTML(body)
+const makeTag = (item, flag = true) => {
+    let newEl = document.createElement(item.element)
+    newEl.textContent = item.text
+    flag
+        ? newEl.style.color = colorsFirst[colorJoy(item.element)]
+        : newEl.style.color = colorsSecond[colorJoy(item.element)]
+    body.appendChild(newEl)
+}
+
+
+files.forEach((item, index) => {
+    (index + 2) % 2 === 0
+        ? files[index].items.forEach((item) => makeTag(item))
+        : files[index].items.forEach((item) => makeTag(item, false))
+})
+
+
+
 
 
