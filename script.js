@@ -1,29 +1,30 @@
 'use strict'
 
-// task 1
-let arr1 = ['18623', '2634', '3545', '4756', '5867', '2654', '47895']
+const body = document.body
+const dayOfWeek = new Date().getDay()
+const weekDays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+]
 
-for (const str of arr1) {
-    if (str[0] === '2' || str[0] === '4') console.log(str)
-}
-
-// task 2
-const eratosfen = (limit = 100) => {
-    let arr = []
-    for (let i = 2; i <= limit; i++) {
-        arr.push(i)
+weekDays.forEach((el, index) => {
+    let newEl = document.createElement('p')
+    switch (index) {
+        case dayOfWeek:
+            newEl.style.fontWeight = 700
+            break;
+        case 0:
+            newEl.style.fontStyle = 'italic'
+            break;
+        case 6:
+            newEl.style.fontStyle = 'italic'
+            break;
     }
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== 0) {
-            for (let step = i + arr[i]; step < arr.length; step += arr[i]) {
-                arr[step] = 0
-            }
-        }
-    }
-    for (const el of arr) {
-        if (el !== 0) console.log(`${el} - делители этого числа: 1 и ${el}`)
-    }
-}
-
-eratosfen()
-
+    newEl.textContent = el
+    body.appendChild(newEl)
+})
