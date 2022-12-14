@@ -4,10 +4,7 @@ let tikTok = () => {
     const weekDays = ['Воскресение', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
     const months = ['января', 'февраля', 'марта', 'апреля', 'мае', 'июня',
         'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
-    let count = 1
     const start = () => {
-        console.log(count);
-        count++
         let date = new Date()
         const tmp = document.querySelector('.wrap')
         tmp.firstElementChild.textContent =
@@ -36,5 +33,4 @@ let tikTok = () => {
 }
 
 tikTok()
-
 
