@@ -2,7 +2,7 @@
 
 let tikTok = () => {
     const start = () => {
-        const tmp = document.querySelector('.wrap')
+        const wrap = document.querySelector('.wrap')
         const date = new Date()
         const weekday = date.toLocaleString('ru', { weekday: 'long' })
         const year = date.toLocaleString('ru', { year: 'numeric' })
@@ -13,15 +13,15 @@ let tikTok = () => {
         const fullDate = date.toLocaleString('ru', { day: '2-digit', month: '2-digit', year: 'numeric' })
         const fullTime = date.toLocaleString('ru', { hour: '2-digit', minute: '2-digit', second: 'numeric' })
 
-        tmp.firstElementChild.textContent =
+        wrap.firstElementChild.textContent =
             `Сегодня ${weekday.charAt(0).toUpperCase() + weekday.slice(1)}, ${dayMonth} ${year} года, 
         ${hour} ${decl(hour, 'hour')} ${minute} ${decl(minute, 'minute')} 
         ${second} ${decl(second, 'second')}`
 
-        tmp.lastElementChild.textContent = `${fullDate} - ${fullTime}`
+        wrap.lastElementChild.textContent = `${fullDate} - ${fullTime}`
     }
 
-    const decl = (units, flag = 'hour') => {
+    const decl = (units, flag) => {
         let tmp = String(units).slice(-1)
         switch (flag) {
             case 'hour': {
